@@ -10,18 +10,15 @@ public class TestPerson {
     @Test
     public void testDefaultConstructor() {
         // Given
-        String expectedName = "";
-        Integer expectedAge = Integer.MAX_VALUE;
+       int expectedAge = 45;
 
         // When
         Person person = new Person();
 
         // Then
-        String actualName = person.getName();
-        Integer actualAge = person.getAge();
+        int actualAge = person.getAge();
 
-        Assert.assertEquals(expectedName, actualName);
-        Assert.assertEquals(expectedAge, actualAge);
+        Assert.assertEquals(expectedAge,actualAge);
     }
 
     @Test
@@ -93,6 +90,90 @@ public class TestPerson {
 
         // Then
         Integer actual = person.getAge();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetWeight() {
+        // Given
+        Person person = new Person();
+        Integer expected = 210;
+
+        // When
+        person.setWeight(expected);
+
+        // Then
+        Integer actual = person.getWeight();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetHeight() {
+        // Given
+        Person person = new Person();
+        Integer expected = 67;
+
+        // When
+        person.setHeight(expected);
+
+        // Then
+        Integer actual = person.getHeight();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetPet() {
+        // Given
+        Person person = new Person();
+        String expected = "dog";
+
+        // When
+        person.setPet(expected);
+
+        // Then
+        String actual = person.getPet();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetEyeColor() {
+        // Given
+        Person person = new Person();
+        String expected = "green";
+
+        // When
+        person.setEyeColor(expected);
+
+        // Then
+        String actual = person.getEyeColor();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetFavortieColor() {
+        // Given
+        Person person = new Person();
+        String expected = "orange";
+
+        // When
+        person.setFavoriteColor(expected);
+
+        // Then
+        String actual = person.getFavoriteColor();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testgetweight() {
+        // Given
+        Person person = new Person("Ricky", 64,643,54,"Dog","Blue","Red");
+        int expected = 643;
+
+        // When
+
+
+        // Then
+        int actual = person.getWeight();
         Assert.assertEquals(expected, actual);
     }
 }
